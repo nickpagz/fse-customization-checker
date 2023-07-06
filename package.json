@@ -1,0 +1,20 @@
+{
+    "name": "fse-customization-checker",
+    "version": "0.0.1",
+    "private": true,
+    "description": "Check for FSE theme customizations.",
+    "author": "Team 51",
+    "license": "GPL-2.0-or-later",
+    "keywords": [ "fse", "block" ],
+    "main": "build/index.js",
+    "devDependencies": {
+        "@wordpress/scripts": "^18.0.1"
+    },
+    "scripts": {
+        "build": "wp-scripts build",
+        "format": "wp-scripts format",
+        "lint:js": "wp-scripts lint-js",
+        "packages-update": "wp-scripts packages-update",
+        "start": "wp-scripts start"
+    }
+}
