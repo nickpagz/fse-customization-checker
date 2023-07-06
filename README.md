@@ -27,7 +27,8 @@ Additionally, if a theme included Style is applied, for example Twenty Twenty Th
 Keep in mind the plugin compares differences to what is found in the theme files vs what is found the database. If you "save" your changes to your theme files using the "Create Block Theme" plugin for example, this usually clears out the saved changes in the database - meaning this plugin would show no customizations are present. Again, the intent of this plugin is to be used as tool to mainly help theme developers and site builders.
 
 ## Known Issues
-The plugin does **not** work with classic themes, like Twenty Twenty One for example. Visiting the **FSE Customization Checker** page in wp-admin will show a loading icon, but don't try waiting - you'll be there for a very very long time!
+* The plugin does **not** work with classic themes, like Twenty Twenty One for example. Visiting the **FSE Customization Checker** page in wp-admin will show a loading icon, but don't try waiting - you'll be there for a very very long time!
+* The plugin does not currently show css customizations added to the customizer (at `/wp-admin/customize.php`).
 
 ## Changelog
 
