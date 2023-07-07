@@ -162,7 +162,9 @@ function FSECustomizationChecker() {
     templates,
     hasResolved
   } = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_2__.useSelect)(select => {
-    const selectorArgs = ['postType', 'wp_template'];
+    const selectorArgs = ['postType', 'wp_template', {
+      per_page: -1
+    }];
     return {
       templates: select(_wordpress_core_data__WEBPACK_IMPORTED_MODULE_3__.store).getEntityRecords(...selectorArgs),
       hasResolved: select(_wordpress_core_data__WEBPACK_IMPORTED_MODULE_3__.store).hasFinishedResolution('getEntityRecords', selectorArgs)
@@ -172,7 +174,9 @@ function FSECustomizationChecker() {
     templateParts,
     hasPartsResolved
   } = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_2__.useSelect)(select => {
-    const selectorArgs = ['postType', 'wp_template_part'];
+    const selectorArgs = ['postType', 'wp_template_part', {
+      per_page: -1
+    }];
     return {
       templateParts: select(_wordpress_core_data__WEBPACK_IMPORTED_MODULE_3__.store).getEntityRecords(...selectorArgs),
       hasPartsResolved: select(_wordpress_core_data__WEBPACK_IMPORTED_MODULE_3__.store).hasFinishedResolution('getEntityRecords', selectorArgs)
@@ -219,6 +223,7 @@ function TemplatePartsList(_ref) {
   if (!templateParts?.length) {
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, "No results");
   }
+  console.log(templateParts);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("table", {
     className: "wp-list-table widefat fixed striped table-view-list fse-template-parts-table"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("thead", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("tr", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", null, "Template Part"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", null, "Slug"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
@@ -250,6 +255,7 @@ function TemplateList(_ref2) {
   if (!templates?.length) {
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, "No results");
   }
+  console.log(templates);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("table", {
     className: "wp-list-table widefat fixed striped table-view-list fse-templates-table"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("thead", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("tr", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", null, "Template"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", null, "Slug"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {

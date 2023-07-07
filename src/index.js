@@ -10,7 +10,7 @@ function FSECustomizationChecker() {
 
     const { templates, hasResolved } = useSelect(
         ( select ) => {
-            const selectorArgs = [ 'postType', 'wp_template' ];
+            const selectorArgs = [ 'postType', 'wp_template', { per_page: -1 } ];
             return {
                 templates: select( coreDataStore ).getEntityRecords(
                     ...selectorArgs
@@ -26,7 +26,7 @@ function FSECustomizationChecker() {
 
     const { templateParts, hasPartsResolved } = useSelect(
         ( select ) => {
-            const selectorArgs = [ 'postType', 'wp_template_part' ];
+            const selectorArgs = [ 'postType', 'wp_template_part', { per_page: -1 } ];
             return {
                 templateParts: select( coreDataStore ).getEntityRecords(
                     ...selectorArgs
@@ -86,6 +86,7 @@ function TemplatePartsList( { hasPartsResolved, templateParts } ) {
     if ( ! templateParts?.length ) {
         return <div>No results</div>;
     }
+    console.log(templateParts);
   
     return (
         <table className="wp-list-table widefat fixed striped table-view-list fse-template-parts-table">
@@ -127,6 +128,7 @@ function TemplateList( { hasResolved, templates } ) {
     if ( ! templates?.length ) {
         return <div>No results</div>;
     }
+    console.log(templates);
   
     return (
         <table className="wp-list-table widefat fixed striped table-view-list fse-templates-table">
