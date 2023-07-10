@@ -89,3 +89,47 @@ add_action(
 		);
 	}
 );
+
+function fse_customization_checker_get_custom_css( WP_REST_Request $request ) {
+	$args = array(
+		'numberposts' => 1,
+		'orderby'     => 'date',
+		'order'       => 'DESC',
+		'post_type'   => 'custom_css',
+	);
+
+	$latest_posts = get_posts( $args );
+
+	if ( empty( $latest_posts ) ) {
+		return new WP_REST_Response( null, 204 );
+	}
+
+	$post    = $latest_posts[0];
+	$post_id = $post->ID;
+
+	$revisions     = wp_get_post_revisions( $post_id );
+	$last_revision = array_shift( $revisions );
+
+	return new WP_REST_Response(
+		array(
+			'content'               => $post->post_content,
+			'last_revision_content' => $last_revision->post_content,
+		),
+		200
+	);
+}
+
+add_action(
+	'rest_api_init',
+	function () {
+		register_rest_route(
+			'fse_customization_checker/v1',
+			'/customcss',
+			array(
+				'methods'  => 'GET',
+				'callback' => 'fse_customization_checker_get_custom_css',
+			)
+		);
+	}
+);
+

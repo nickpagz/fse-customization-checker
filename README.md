@@ -23,6 +23,15 @@ The above alone is not a customization to the global styles. Additional content 
 
 Additionally, if a theme included Style is applied, for example Twenty Twenty Three ships with ten additional styles, these get applied in the "Global Styles Overrides", with no indication of which variation was applied.
 
+### Patterns, Classic Custom CSS
+Both synced and un-synced patterns will always show as "User Generated". This is because these only live in the database, and as such do not "compare" against any theme files as mentioned in the notes below.
+
+Synced Patterns (since WordPress 6.3) were formaly known as Reuseable Blocks, and are not part of any theme files, nor meant to be. They are user generated for convenience.
+
+Un-synced Patterns are also user generated and work slightly different to the patterns found in theme files. 
+
+These are included and displayed for convenience.
+
 ### Other Notes
 Keep in mind the plugin compares differences to what is found in the theme files vs what is found the database. If you "save" your changes to your theme files using the "Create Block Theme" plugin for example, this usually clears out the saved changes in the database - meaning this plugin would show no customizations are present. Again, the intent of this plugin is to be used as tool to mainly help theme developers and site builders.
 
@@ -31,6 +40,12 @@ Keep in mind the plugin compares differences to what is found in the theme files
 * The plugin does not currently show css customizations added to the customizer (at `/wp-admin/customize.php`).
 
 ## Changelog
+
+### 1.1.0
+* Added Synced and Un-synced patterns
+* Added classic customizer custom css
+* Additional verbose logging in the browser console
+* Collapsible sections for easier reading
 
 ### 1.0.0
 * Initial release

@@ -62,4 +62,10 @@ button .components-spinner {
 
 .fse-customization-checker-global-styles pre {
 	background-color: #ffffff;
+	padding: 10px;
+}
+
+#fse-customization-checker h2 {
+	display: inline-block;
+	margin-left: 6px;
 }
